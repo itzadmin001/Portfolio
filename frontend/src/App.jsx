@@ -39,9 +39,8 @@ function App() {
           hue={220}
           xOffset={0}
           speed={0.1}
-          intensity={0.5}
-
-          size={1}
+          intensity={0.3}
+          size={1.3}
         />
       </div>
 
