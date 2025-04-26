@@ -38,7 +38,7 @@ function App() {
         <Lightning
           hue={220}
           xOffset={0}
-          speed={0.1}
+          speed={0.5}
           intensity={0.6}
           size={1.3}
         />
