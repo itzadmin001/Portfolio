@@ -22,7 +22,7 @@ function App() {
   return (
     <div className='bg-[#111111] text-gray-200 relative z-20 select-none'>
 
-      <div className='md:block hidden w-full h-full absolute top-0 z-[-1] '>
+      <div className='w-full h-full absolute top-0 z-[-1] '>
         <Particles
           particleColors={['#ffffff', '#ffffff']}
           particleCount={800}
@@ -32,15 +32,6 @@ function App() {
           moveParticlesOnHover={false}
           alphaParticles={true}
           disableRotation={false}
-        />
-      </div>
-      <div className='md:hidden block w-full h-full absolute top-0 z-[-1]'>
-        <Lightning
-          hue={220}
-          xOffset={0}
-          speed={0.1}
-          intensity={0.6}
-          size={1.3}
         />
       </div>
 
