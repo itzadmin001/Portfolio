@@ -31,7 +31,7 @@ function Footer() {
                         })
                     }
                 </div>
-                <h1 className='mb-10'>  Created with 💖 using Vite</h1>
+                <h1 className='mb-10'>  Building in public at ADMIN 👤</h1>
             </div>
         </Container >
     )
