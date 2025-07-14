@@ -31,7 +31,10 @@ function Footer() {
                     {
                         socialicon.map((img, i) => {
                             return (
-                                <img src={img.src} key={i} alt="" className='md:w-8 w-4' />
+                                <a href={img.path} key={i} className=' cursor-pointer'>
+
+                                    <img src={img.src} key={i} alt="" className='md:w-8 w-4' />
+                                </a>
                             )
                         })
                     }
