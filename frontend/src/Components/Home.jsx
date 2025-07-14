@@ -2,7 +2,7 @@ import React from 'react'
 import Container from './Container'
 import ShinyText from '../../ReactBits/ShinyText/ShinyText'
 import { motion } from "motion/react"
-import TextPressure from "../../ReactBits/TextPressure/TextPressure"
+import TextPressure from "../../ReactBits/TextAnimations/TextPressure/TextPressure"
 function Home() {
     return (
         <Container classes='h-[80vh] flex gap-5 mt-10 flex-col items-center'>
@@ -16,7 +16,6 @@ function Home() {
                         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                     >
                     </motion.div>
-
                 </div>
                 <div className='px-5 flex flex-col gap-4 items-center justify-center'>
                     <div className='w-full  md:block hidden'>

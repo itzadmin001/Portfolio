@@ -5,7 +5,6 @@ import Projects from "./Components/Projects"
 import About from "./Components/About"
 import Footer from "./Components/Footer"
 import Particles from "../ReactBits/Particles/Particles"
-import Lightning from "../ReactBits/Lightning/Lightning"
 function App() {
   useEffect(() => {
     const handleRightClick = (event) => {
@@ -35,13 +34,7 @@ function App() {
         />
       </div>
       <div className='md:hidden block w-full h-full absolute top-0 z-[-1]'>
-        <Lightning
-          hue={220}
-          xOffset={0}
-          speed={0.1}
-          intensity={0.3}
-          size={1.3}
-        />
+
       </div>
 
       <Navbar />

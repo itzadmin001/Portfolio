@@ -1,3 +1,7 @@
+/*
+	Installed from https://reactbits.dev/tailwind/
+*/
+
 import { useEffect, useRef, useState } from 'react';
 
 const TextPressure = ({
@@ -17,6 +21,7 @@ const TextPressure = ({
 
   textColor = '#FFFFFF',
   strokeColor = '#FF0000',
+  strokeWidth = 2,
   className = '',
 
   minFontSize = 24,
@@ -55,7 +60,6 @@ const TextPressure = ({
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
-    // Initialize mouse near center of container if it exists
     if (containerRef.current) {
       const { left, top, width, height } = containerRef.current.getBoundingClientRect();
       mouseRef.current.x = left + width / 2;
@@ -98,7 +102,6 @@ const TextPressure = ({
     setSize();
     window.addEventListener('resize', setSize);
     return () => window.removeEventListener('resize', setSize);
-    // eslint-disable-next-line
   }, [scale, text]);
 
   useEffect(() => {
@@ -144,40 +147,21 @@ const TextPressure = ({
     return () => cancelAnimationFrame(rafId);
   }, [width, weight, italic, alpha, chars.length]);
 
-  const dynamicClassName = [className, flex ? 'flex' : '', stroke ? 'stroke' : '']
-    .filter(Boolean)
-    .join(' ');
-
   return (
     <div
       ref={containerRef}
-      style={{
-        position: 'relative',
-        width: '100%',
-        height: '100%',
-        background: 'transparent',
-      }}
+      className="relative w-full h-full overflow-hidden bg-transparent"
     >
       <style>{`
-        /* Font face if needed */
         @font-face {
           font-family: '${fontFamily}';
           src: url('${fontUrl}');
           font-style: normal;
         }
-
-        /* If flex=true => space out each character span */
-        .flex {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        /* Stroke class toggles "stroke" effect on each character */
         .stroke span {
           position: relative;
-          color: ${textColor}; /* normal text color */
+          color: ${textColor};
         }
-        /* The stroke layer sits behind with text-stroke */
         .stroke span::after {
           content: attr(data-char);
           position: absolute;
@@ -185,33 +169,24 @@ const TextPressure = ({
           top: 0;
           color: transparent;
           z-index: -1;
-          /* If you'd like to shift the stroke up/down, you can add transform here */
-          -webkit-text-stroke-width: 3px;
+          -webkit-text-stroke-width: ${strokeWidth}px;
           -webkit-text-stroke-color: ${strokeColor};
-        }
-
-        /* If stroke=false => no stroke class => normal text color */
-        .text-pressure-title {
-          color: ${textColor};
         }
       `}</style>
 
       <h1
         ref={titleRef}
-        className={`text-pressure-title ${dynamicClassName}`}
+        className={`text-pressure-title ${className} ${flex ? 'flex justify-between' : ''
+          } ${stroke ? 'stroke' : ''} uppercase text-center`}
         style={{
           fontFamily,
-          textTransform: 'uppercase',
           fontSize: fontSize,
           lineHeight,
           transform: `scale(1, ${scaleY})`,
           transformOrigin: 'center top',
           margin: 0,
-          textAlign: 'center',
-          userSelect: 'none',
-          whiteSpace: 'nowrap',
           fontWeight: 100,
-          width: '100%',
+          color: stroke ? undefined : textColor,
         }}
       >
         {chars.map((char, i) => (
@@ -219,10 +194,7 @@ const TextPressure = ({
             key={i}
             ref={(el) => (spansRef.current[i] = el)}
             data-char={char}
-            style={{
-              display: 'inline-block',
-              color: stroke ? undefined : textColor
-            }}
+            className="inline-block"
           >
             {char}
           </span>
