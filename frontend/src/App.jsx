@@ -33,6 +33,7 @@ function App() {
           disableRotation={false}
         />
       </div>
+
       <Navbar />
       <Home />
       <About />

@@ -37,14 +37,17 @@ function Footer() {
                     }
                 </div>
                 <div className="container mx-auto text-center px-4">
-                    <p className="text-sm sm:text-base animate-pulse">
-                        Made in <span className="text-pink-500">127.0.0.1</span> 🖥️ | Crafted with <span className="text-yellow-400">⚙️, ❤️ & {'<code>'}</span> by <span className="font-semibold text-cyan-400">ADMIN 👨‍💻</span>
-                    </p>
-                    <p className="mt-2 text-xs text-gray-400">
-                        © {new Date().getFullYear()} All rights reserved.
-                    </p>
+
+                    <div className="container mx-auto text-center px-4">
+
+                        <p className="text-sm sm:text-base animate-pulse">
+                            Made in <span className="text-pink-500">127.0.0.1</span> 🖥️ | Crafted with <span className="text-yellow-400">⚙️, ❤️ & {'<code>'}</span> by <span className="font-semibold text-cyan-400">ADMIN 👨‍💻</span>
+                        </p>
+                        <p className="mt-2 text-xs text-gray-400">
+                            © {new Date().getFullYear()} All rights reserved.
+                        </p>
+                    </div>
                 </div>
-            </div>
         </Container >
     )
 }
