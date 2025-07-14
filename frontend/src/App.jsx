@@ -21,7 +21,7 @@ function App() {
   return (
     <div className='bg-[#111111] text-gray-200 relative z-20 select-none'>
 
-      <div className='md:block hidden w-full h-full absolute top-0 z-[-1] '>
+      <div className='w-full h-full absolute top-0 z-[-1] '>
         <Particles
           particleColors={['#ffffff', '#ffffff']}
           particleCount={800}
@@ -33,9 +33,12 @@ function App() {
           disableRotation={false}
         />
       </div>
+<<<<<<< HEAD
       <div className='md:hidden block w-full h-full absolute top-0 z-[-1]'>
 
       </div>
+=======
+>>>>>>> da08e2c5c5d6b1907f7cffd2a993af7a3b9c0f90
 
       <Navbar />
       <Home />
