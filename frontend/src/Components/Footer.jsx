@@ -5,18 +5,23 @@ function Footer() {
     const socialicon = [
         {
             name: "github",
-            src: "/Images/github.png"
+            src: "/Images/github.png",
+            path: "https://github.com/itzadmin001"
         }, {
             name: "instagram",
-            src: "/Images/instagram.svg"
+            src: "/Images/instagram.svg",
+            path: "https://instagram.com/itz__admin__01"
         },
         {
             name: "linkedin",
-            src: "/Images/linkedin.svg"
+            src: "/Images/linkedin.svg",
+            path: "https://linkedin.com/in/yogesh-kumar-558b4b26b"
+
         },
         {
             name: "twitter",
-            src: "/Images/twitter.svg"
+            src: "/Images/twitter.svg",
+            path: "https://x.com/Yogeshkumar_00"
         }
     ]
     return (
@@ -31,11 +36,7 @@ function Footer() {
                         })
                     }
                 </div>
-<<<<<<< HEAD
-
-
-=======
-               <div className="container mx-auto text-center px-4">
+                <div className="container mx-auto text-center px-4">
                     <p className="text-sm sm:text-base animate-pulse">
                         Made in <span className="text-pink-500">127.0.0.1</span> 🖥️ | Crafted with <span className="text-yellow-400">⚙️, ❤️ & {'<code>'}</span> by <span className="font-semibold text-cyan-400">ADMIN 👨‍💻</span>
                     </p>
@@ -43,7 +44,6 @@ function Footer() {
                         © {new Date().getFullYear()} All rights reserved.
                     </p>
                 </div>
->>>>>>> da08e2c5c5d6b1907f7cffd2a993af7a3b9c0f90
             </div>
         </Container >
     )
